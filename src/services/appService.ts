@@ -6,9 +6,13 @@ const axiosInstance = axios.create({
   baseURL: BASE_URL
 })
 
-// GET all news
+// GET user info
 const getUser = (username: string) =>
   axiosInstance.get(`${BASE_URL}${username}`)
 
+// GET user repos
+const getUserRepos = (username: string) =>
+  axiosInstance.get(`${BASE_URL}${username}/repos`)
+
 // Export all functions
-export { getUser }
+export { getUser, getUserRepos }

@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import appSlice from './state-management/slices/appSlice'
+import reposSlice from './state-management/slices/reposSlice'
 
 export const store = configureStore({
   reducer: combineReducers({
-    app: appSlice
+    app: appSlice,
+    repos: reposSlice
   })
 })
 
