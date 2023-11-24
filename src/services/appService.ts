@@ -14,5 +14,8 @@ const getUser = (username: string) =>
 const getUserRepos = (username: string) =>
   axiosInstance.get(`${BASE_URL}${username}/repos`)
 
+// GET user followers
+const getUserFollowers = (username: string) =>
+  axiosInstance.get(`${BASE_URL}${username}/followers`)
 // Export all functions
-export { getUser, getUserRepos }
+export { getUser, getUserRepos, getUserFollowers }
