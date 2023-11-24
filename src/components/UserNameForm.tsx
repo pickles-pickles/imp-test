@@ -3,8 +3,11 @@ import TextField from '@mui/material/TextField'
 import React from 'react'
 import { AppDispatch } from '../store'
 import { useDispatch, useSelector } from 'react-redux'
-import { setName, nameSelector } from '../state-management/slices/appSlice'
-import { getUser } from '../services/appService'
+import {
+  setName,
+  nameSelector,
+  fetchUserInfo
+} from '../state-management/slices/appSlice'
 
 export const UserNameForm = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -16,7 +19,7 @@ export const UserNameForm = () => {
     },
     handleSubmit = (e: any) => {
       e.preventDefault()
-      getUser(name)
+      dispatch(fetchUserInfo(name))
     }
   return (
     <Box
@@ -34,7 +37,9 @@ export const UserNameForm = () => {
         value={name}
         onChange={handleNameChange}
       />
-      <Button onClick={handleSubmit}>Submit</Button>
+      <Button onClick={handleSubmit} disabled={!name}>
+        Submit
+      </Button>
     </Box>
   )
 }

@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 // GET all news
 const getUser = (username: string) =>
-  axiosInstance.get(`${BASE_URL}${username}/`)
+  axiosInstance.get(`${BASE_URL}${username}`)
 
 // Export all functions
 export { getUser }
