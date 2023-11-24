@@ -8,6 +8,8 @@ import {
   nameSelector,
   fetchUserInfo
 } from '../state-management/slices/appSlice'
+import { fetchUserFollowers } from '../state-management/slices/followersSlice'
+import { fetchUserRepos } from '../state-management/slices/reposSlice'
 
 export const UserNameForm = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -20,6 +22,8 @@ export const UserNameForm = () => {
     handleSubmit = (e: any) => {
       e.preventDefault()
       dispatch(fetchUserInfo(name))
+      dispatch(fetchUserFollowers(name))
+      dispatch(fetchUserRepos(name))
     }
   return (
     <Box
