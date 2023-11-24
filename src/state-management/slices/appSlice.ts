@@ -1,11 +1,12 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../../store'
 import { getUser } from '../../services/appService'
+import { userType } from '../../types/types'
 
 // Define a type for the slice state
 interface AppState {
   name: string
-  user: object
+  user: userType
   isLoading: boolean
   error: any
   success: boolean
@@ -66,5 +67,9 @@ export const appSlice = createSlice({
 export const { setName, setUser } = appSlice.actions
 
 export const nameSelector = (state: RootState) => state.app.name
+export const userSelector = (state: RootState) => state.app.user
+export const isLoadingSelector = (state: RootState) => state.app.isLoading
+export const errorSelector = (state: RootState) => state.app.error
+export const successSelector = (state: RootState) => state.app.success
 
 export default appSlice.reducer
