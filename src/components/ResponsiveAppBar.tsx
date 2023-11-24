@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -11,7 +11,6 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 import { Link } from 'react-router-dom'
 
 const pages = [
@@ -35,12 +34,9 @@ function ResponsiveAppBar () {
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant='h6'
             noWrap
-            component='a'
-            href='#app-bar-with-responsive-menu'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -51,7 +47,9 @@ function ResponsiveAppBar () {
               textDecoration: 'none'
             }}
           >
-            LOGO
+            <Link to='/'>
+              <img width={32} height={32} src='favicon-32x32.png' alt='logo' />
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -85,17 +83,18 @@ function ResponsiveAppBar () {
             >
               {pages.map(page => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page.title}</Typography>
+                  <Typography textAlign='center'>
+                    {' '}
+                    <Link to={`/${page.url}`}>{page.title}</Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
           <Typography
             variant='h5'
             noWrap
-            component='a'
-            href='#app-bar-with-responsive-menu'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -107,7 +106,9 @@ function ResponsiveAppBar () {
               textDecoration: 'none'
             }}
           >
-            LOGO
+            <Link to='/'>
+              <img width={32} height={32} src='favicon-32x32.png' alt='logo' />
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(page => (
