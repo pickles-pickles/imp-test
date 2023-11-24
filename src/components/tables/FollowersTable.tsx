@@ -10,15 +10,15 @@ import { useSelector } from 'react-redux'
 import {
   errorSelector,
   isLoadingSelector,
-  reposSelector,
+  followersSelector,
   successSelector
-} from '../../state-management/slices/reposSlice'
+} from '../../state-management/slices/followersSlice'
 
 export default function FollowersTable (props: any) {
   const error = useSelector(errorSelector),
     success = useSelector(successSelector),
     isLoading = useSelector(isLoadingSelector),
-    repos = useSelector(reposSelector)
+    followers = useSelector(followersSelector)
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -38,11 +38,11 @@ export default function FollowersTable (props: any) {
             </>
           )}
           {success &&
-            repos.map(repo => (
-              <TableRow key={repo.id}>
-                <TableCell align='left'>{repo.login}</TableCell>
-                <TableCell align='left'>{repo.html_url}</TableCell>
-                <TableCell align='left'>{repo.type}</TableCell>
+            followers.map(follower => (
+              <TableRow key={follower.id}>
+                <TableCell align='left'>{follower.login}</TableCell>
+                <TableCell align='left'>{follower.html_url}</TableCell>
+                <TableCell align='left'>{follower.type}</TableCell>
               </TableRow>
             ))}
           {error && 'Something went wrong'}

@@ -16,6 +16,7 @@ function App () {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/repos' element={<FollowersPage />} />
+        <Route path='/followers' element={<FollowersPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </div>
