@@ -13,7 +13,7 @@ import {
   successSelector
 } from '../../state-management/slices/appSlice'
 
-export default function BasicTable (props: any) {
+export default function InfoTable (props: any) {
   const error = useSelector(errorSelector),
     success = useSelector(successSelector),
     isLoading = useSelector(isLoadingSelector)

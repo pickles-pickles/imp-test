@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import BasicTable from '../components/tables/BasicTable'
+import InfoTable from '../components/tables/InfoTable'
 import { userSelector } from '../state-management/slices/appSlice'
 import { useSelector } from 'react-redux'
 
@@ -10,7 +10,7 @@ export const MainPage = () => {
     <React.Fragment>
       <Grid container>
         <Grid item xs={12} sx={{ minHeight: 50 }}>
-          <BasicTable user={user} />
+          <InfoTable user={user} />
         </Grid>
       </Grid>
     </React.Fragment>
