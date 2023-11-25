@@ -1,5 +1,6 @@
 import { Box, Button } from '@mui/material'
 import TextField from '@mui/material/TextField'
+import styled from '@emotion/styled'
 import React from 'react'
 import { AppDispatch } from '../store'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +11,41 @@ import {
 } from '../state-management/slices/appSlice'
 import { fetchUserFollowers } from '../state-management/slices/followersSlice'
 import { fetchUserRepos } from '../state-management/slices/reposSlice'
+
+const StyledTextField = styled(TextField)(() => ({
+  textDecoration: 'none',
+
+  '& .MuiInputLabel-root': {
+    color: '#d6d6d6',
+    borderColor: '#d6d6d6'
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: '#05EE53'
+  },
+  '& .MuiInputBase-root': {
+    color: '#f5f5f6;'
+  },
+  '& .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#05EE53'
+  },
+  '&:hover .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#05EE53'
+  },
+  '&:focus .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#05EE53'
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#05EE53'
+    },
+    '&:hover fieldset': {
+      borderColor: 'white'
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#05EE53'
+    }
+  }
+}))
 
 export const UserNameForm = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -36,7 +72,7 @@ export const UserNameForm = () => {
       noValidate
       autoComplete='off'
     >
-      <TextField
+      <StyledTextField
         id='name-input'
         label='name'
         variant='outlined'
