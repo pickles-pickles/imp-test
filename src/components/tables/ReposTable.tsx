@@ -1,4 +1,3 @@
-import LinearProgress from '@mui/material/LinearProgress'
 import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -17,6 +16,7 @@ import {
 import { repoType } from '../../types/types'
 import { sortArray } from '../../helpers/sortArray'
 import { StyledTableCell, tableStyle } from '../../styles/styles'
+import { ProgressBar } from './ProgressBar'
 
 export default function ReposTable (props: any) {
   const error = useSelector(errorSelector),
@@ -38,9 +38,7 @@ export default function ReposTable (props: any) {
         <TableBody>
           {isLoading && (
             <>
-              <LinearProgress color='secondary' sx={{ minHeight: 20 }} />
-              <LinearProgress color='success' sx={{ minHeight: 20 }} />
-              <LinearProgress color='inherit' sx={{ minHeight: 20 }} />
+              <ProgressBar />
             </>
           )}
           {success &&

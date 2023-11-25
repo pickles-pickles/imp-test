@@ -1,4 +1,3 @@
-import LinearProgress from '@mui/material/LinearProgress'
 import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -13,6 +12,7 @@ import {
   successSelector
 } from '../../state-management/slices/appSlice'
 import { StyledTableCell, tableStyle } from '../../styles/styles'
+import { ProgressBar } from './ProgressBar'
 
 export default function InfoTable (props: any) {
   const error = useSelector(errorSelector),
@@ -37,9 +37,7 @@ export default function InfoTable (props: any) {
         <TableBody>
           {isLoading && (
             <>
-              <LinearProgress color='secondary' sx={{ minHeight: 20 }} />
-              <LinearProgress color='success' sx={{ minHeight: 20 }} />
-              <LinearProgress color='inherit' sx={{ minHeight: 20 }} />
+              <ProgressBar />
             </>
           )}
           {success && (
