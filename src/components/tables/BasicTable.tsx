@@ -23,10 +23,12 @@ export default function BasicTable (props: any) {
         <TableHead>
           <TableRow>
             <TableCell align='left'>Username</TableCell>
+            <TableCell align='left'>Name</TableCell>
             <TableCell align='left'>Public Repos</TableCell>
             <TableCell align='left'>Followers</TableCell>
             <TableCell align='left'>Following</TableCell>
             <TableCell align='left'>Location</TableCell>
+            <TableCell align='left'>Type</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -40,10 +42,12 @@ export default function BasicTable (props: any) {
           {success && (
             <TableRow>
               <TableCell align='left'>{props.user.login}</TableCell>
+              <TableCell align='left'>{props.user.name || '-'}</TableCell>
               <TableCell align='left'>{props.user.public_repos}</TableCell>
               <TableCell align='left'>{props.user.followers}</TableCell>
               <TableCell align='left'>{props.user.following}</TableCell>
               <TableCell align='left'>{props.user.location || '-'}</TableCell>
+              <TableCell align='left'>{props.user.type || '-'}</TableCell>
             </TableRow>
           )}
           {error && 'Something went wrong'}
