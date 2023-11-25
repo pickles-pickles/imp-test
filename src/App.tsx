@@ -11,11 +11,14 @@ function App () {
   return (
     <div className='App'>
       <ResponsiveAppBar />
-      <h1>
-        Welcome to the Home Assignment for React developer position in
-        Konnektable
-      </h1>
-      <UserNameForm />
+      <div className='title-and-form-wrapper'>
+        <h1 className='title'>
+          Welcome to the Home Assignment for the React developer position in
+          Konnektable
+        </h1>
+        <UserNameForm />
+      </div>
+
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/repos' element={<ReposPage />} />
