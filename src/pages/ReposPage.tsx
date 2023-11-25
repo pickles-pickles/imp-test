@@ -1,6 +1,6 @@
 import React from 'react'
 import ReposTable from '../components/tables/ReposTable'
-import { SortArrayButtonGroup } from '../components/SortArrayButtonGroup'
+import { SortArrayButtonGroup } from '../components/SortArrButtonGroup'
 
 export const ReposPage = () => {
   return (
