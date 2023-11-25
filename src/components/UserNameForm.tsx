@@ -47,6 +47,15 @@ const StyledTextField = styled(TextField)(() => ({
   }
 }))
 
+const StyledButton = styled(Button)(() => ({
+  color: '#0E12F7',
+  background: '#05EE53',
+  fontWeight: 'bold',
+  '&:hover': {
+    border: '1px solid #0E12F7'
+  }
+}))
+
 export const UserNameForm = () => {
   const dispatch = useDispatch<AppDispatch>()
   const name = useSelector(nameSelector)
@@ -84,9 +93,9 @@ export const UserNameForm = () => {
           }
         }}
       />
-      <Button onClick={handleSubmit} disabled={!name}>
+      <StyledButton onClick={handleSubmit} disabled={!name} size='large'>
         Submit
-      </Button>
+      </StyledButton>
     </Box>
   )
 }
