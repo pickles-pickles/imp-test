@@ -12,6 +12,8 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import { Link } from 'react-router-dom'
+import { userSelector } from '../state-management/slices/appSlice'
+import { useSelector } from 'react-redux'
 
 const pages = [
   { title: 'Home', url: '' },
@@ -20,6 +22,7 @@ const pages = [
 ]
 
 function ResponsiveAppBar () {
+  const user = useSelector(userSelector)
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -123,8 +126,13 @@ function ResponsiveAppBar () {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title='Open settings'>
-              <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
+            <Tooltip title={user.login || 'no avatar'}>
+              <Avatar
+                alt='user avatar'
+                src={`${
+                  user.login ? user.avatar_url : '/static/images/avatar/2.jpg'
+                }`}
+              />
             </Tooltip>
           </Box>
         </Toolbar>
