@@ -13,17 +13,32 @@ function App () {
     <div className='App'>
       <ResponsiveAppBar />
       <Grid container className='title-and-form-wrapper'>
-        <Grid item xs={12} lg={6}>
+        <Grid
+          item
+          xs={12}
+          lg={6}
+          display='flex'
+          flexDirection='column'
+          justifyContent='center'
+          alignItems='center'
+        >
           <h1 className='title'>
             Home Assignment for the React developer position in Konnektable
           </h1>
           <UserNameForm />
         </Grid>
-        <Grid item xs={12} lg={6} alignItems='center' justifyContent='center'>
+        <Grid
+          item
+          xs={12}
+          lg={6}
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+        >
           <img
             src='/github-objects.webp'
             alt='github objects'
-            style={{ maxHeight: '20%', maxWidth: '90%', borderRadius: 6 }}
+            style={{ maxHeight: '20%', maxWidth: '70%', borderRadius: 6 }}
           />
         </Grid>
       </Grid>
