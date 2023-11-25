@@ -13,6 +13,7 @@ import {
 } from '../../state-management/slices/appSlice'
 import { StyledTableCell, tableStyle } from '../../styles/styles'
 import { ProgressBar } from './ProgressBar'
+import { ErrorMessageTableRow } from './ErrorMessageTableRow'
 
 export default function InfoTable (props: any) {
   const error = useSelector(errorSelector),
@@ -60,7 +61,7 @@ export default function InfoTable (props: any) {
               </TableCell>
             </TableRow>
           )}
-          {error && 'Something went wrong'}
+          {error && <ErrorMessageTableRow colSpan={9} error={error} />}
         </TableBody>
       </Table>
     </TableContainer>

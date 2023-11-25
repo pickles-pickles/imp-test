@@ -14,6 +14,7 @@ import {
 } from '../../state-management/slices/followersSlice'
 import { StyledTableCell, tableStyle } from '../../styles/styles'
 import { ProgressBar } from './ProgressBar'
+import { ErrorMessageTableRow } from './ErrorMessageTableRow'
 
 export default function FollowersTable (props: any) {
   const error = useSelector(errorSelector),
@@ -58,7 +59,7 @@ export default function FollowersTable (props: any) {
                 </TableCell>
               </TableRow>
             ))}
-          {error && 'Something went wrong'}
+          {error && <ErrorMessageTableRow colSpan={9} error={error} />}
         </TableBody>
       </Table>
     </TableContainer>

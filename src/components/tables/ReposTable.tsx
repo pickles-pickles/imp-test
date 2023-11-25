@@ -17,6 +17,7 @@ import { repoType } from '../../types/types'
 import { sortArray } from '../../helpers/sortArray'
 import { StyledTableCell, tableStyle } from '../../styles/styles'
 import { ProgressBar } from './ProgressBar'
+import { ErrorMessageTableRow } from './ErrorMessageTableRow'
 
 export default function ReposTable (props: any) {
   const error = useSelector(errorSelector),
@@ -56,7 +57,7 @@ export default function ReposTable (props: any) {
                 </TableRow>
               )
             )}
-          {error && 'Something went wrong'}
+          {error && <ErrorMessageTableRow colSpan={9} error={error} />}
         </TableBody>
       </Table>
     </TableContainer>
