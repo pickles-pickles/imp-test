@@ -15,7 +15,7 @@ interface reposState {
 // Define the initial state using that type
 const initialState: reposState = {
   repos: [],
-  sortOrder: 'asc',
+  sortOrder: '',
   isLoading: false,
   error: null,
   success: false
