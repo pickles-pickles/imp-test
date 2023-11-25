@@ -34,7 +34,7 @@ function ResponsiveAppBar () {
   }
 
   return (
-    <AppBar position='static'>
+    <AppBar position='static' sx={{ background: '#05EE53' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Typography
@@ -110,10 +110,17 @@ function ResponsiveAppBar () {
             }}
           >
             <Link to='/'>
-              <img width={32} height={32} src='favicon-32x32.png' alt='logo' />
+              <img width={35} height={35} src='favicon-32x32.png' alt='logo' />
             </Link>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
             {pages.map(page => (
               <Button
                 key={page.title}
