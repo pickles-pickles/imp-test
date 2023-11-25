@@ -42,6 +42,11 @@ export const UserNameForm = () => {
         variant='outlined'
         value={name}
         onChange={handleNameChange}
+        onKeyDown={e => {
+          if (e.key === 'Enter') {
+            handleSubmit(e) //when press Enter, submit the form, don't reload the page
+          }
+        }}
       />
       <Button onClick={handleSubmit} disabled={!name}>
         Submit
