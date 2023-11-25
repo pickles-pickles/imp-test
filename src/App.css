@@ -21,3 +21,23 @@
   margin-bottom: 2rem;
   text-align: center;
 }
+
+.page-404-container {
+  background-image: url('/public/github-objects.webp');
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-404-container h1 {
+  font-size: 6rem;
+}
