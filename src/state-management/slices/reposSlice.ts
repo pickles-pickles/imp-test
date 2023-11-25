@@ -34,7 +34,7 @@ export const reposSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setRepos: (state, action: PayloadAction<Array<repoType>>) => {
+    setRepos: (state, action: PayloadAction<Array<any>>) => {
       state.repos = action.payload
     }
   },
@@ -49,13 +49,26 @@ export const reposSlice = createSlice({
         state.error = action.error
       })
 
-      .addCase(fetchUserRepos.fulfilled, (state, action) => {
-        console.log('action payload is', action.payload)
-        state.repos = action.payload
+      .addCase(
+        fetchUserRepos.fulfilled,
+        (state, action: PayloadAction<Array<any>>) => {
+          console.log('action payload is', action.payload)
+          state.repos = action.payload
+            .filter(repo => !repo.private)
+            .map(publicRepo => ({
+              id: publicRepo.id,
+              node_id: publicRepo.node_id,
+              name: publicRepo.name,
+              url: publicRepo.url,
+              html_url: publicRepo.html_url,
+              description: publicRepo.description,
+              stargazers_count: publicRepo.stargazers_count
+            }))
 
-        state.isLoading = false
-        state.success = true
-      })
+          state.isLoading = false
+          state.success = true
+        }
+      )
   }
 })
 
