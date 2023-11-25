@@ -44,7 +44,11 @@ export default function ReposTable (props: any) {
               <TableRow key={repo.id}>
                 <TableCell align='left'>{repo.name}</TableCell>
                 <TableCell align='left'>{repo.description}</TableCell>
-                <TableCell align='left'>{repo.html_url}</TableCell>
+                <TableCell align='left'>
+                  <a href={repo.html_url} target='_blank' rel='noreferrer'>
+                    {repo.html_url}
+                  </a>
+                </TableCell>
                 <TableCell align='left'>{repo.stargazers_count}</TableCell>
               </TableRow>
             ))}

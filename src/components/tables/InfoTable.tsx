@@ -29,6 +29,8 @@ export default function InfoTable (props: any) {
             <TableCell align='left'>Following</TableCell>
             <TableCell align='left'>Location</TableCell>
             <TableCell align='left'>Type</TableCell>
+            <TableCell align='left'>Bio</TableCell>
+            <TableCell align='left'>Avatar</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -48,6 +50,15 @@ export default function InfoTable (props: any) {
               <TableCell align='left'>{props.user.following}</TableCell>
               <TableCell align='left'>{props.user.location || '-'}</TableCell>
               <TableCell align='left'>{props.user.type || '-'}</TableCell>
+              <TableCell align='left'>{props.user.bio || '-'}</TableCell>
+              <TableCell align='left'>
+                <img
+                  width={30}
+                  height={30}
+                  src={props.user.avatar_url}
+                  alt='follower avatar'
+                />
+              </TableCell>
             </TableRow>
           )}
           {error && 'Something went wrong'}

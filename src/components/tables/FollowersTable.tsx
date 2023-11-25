@@ -27,6 +27,7 @@ export default function FollowersTable (props: any) {
             <TableCell align='left'>Username</TableCell>
             <TableCell align='left'>Url</TableCell>
             <TableCell align='left'>Type</TableCell>
+            <TableCell align='left'>Avatar</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,8 +42,21 @@ export default function FollowersTable (props: any) {
             followers.map(follower => (
               <TableRow key={follower.id}>
                 <TableCell align='left'>{follower.login}</TableCell>
-                <TableCell align='left'>{follower.html_url}</TableCell>
+                <TableCell align='left'>
+                  {' '}
+                  <a href={follower.html_url} target='_blank' rel='noreferrer'>
+                    {follower.html_url}
+                  </a>
+                </TableCell>
                 <TableCell align='left'>{follower.type}</TableCell>
+                <TableCell align='left'>
+                  <img
+                    width={30}
+                    height={30}
+                    src={follower.avatar_url}
+                    alt='follower avatar'
+                  />
+                </TableCell>
               </TableRow>
             ))}
           {error && 'Something went wrong'}
