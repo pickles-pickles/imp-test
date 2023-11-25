@@ -6,12 +6,14 @@ import { AppDispatch } from '../store'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   isLoadingSelector,
+  reposSelector,
   setSortOrder
 } from '../state-management/slices/reposSlice'
 
 export const SortArrayButtonGroup = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const isLoading = useSelector(isLoadingSelector)
+  const isLoading = useSelector(isLoadingSelector),
+    repos = useSelector(reposSelector)
 
   const handleSetAscendingOrder = () => {
       dispatch(setSortOrder('asc'))
@@ -26,7 +28,7 @@ export const SortArrayButtonGroup = () => {
     <ButtonGroup
       variant='contained'
       aria-label='outlined button group'
-      disabled={isLoading}
+      disabled={isLoading || !repos.length}
     >
       <Button onClick={handleSetAscendingOrder} sx={{ background: '#0E12F7' }}>
         ASCENDING
