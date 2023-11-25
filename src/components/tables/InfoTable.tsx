@@ -12,6 +12,7 @@ import {
   isLoadingSelector,
   successSelector
 } from '../../state-management/slices/appSlice'
+import { StyledTableCell, tableStyle } from '../../styles/styles'
 
 export default function InfoTable (props: any) {
   const error = useSelector(errorSelector),
@@ -19,18 +20,18 @@ export default function InfoTable (props: any) {
     isLoading = useSelector(isLoadingSelector)
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+      <Table sx={tableStyle} aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell align='left'>Username</TableCell>
-            <TableCell align='left'>Name</TableCell>
-            <TableCell align='left'>Public Repos</TableCell>
-            <TableCell align='left'>Followers</TableCell>
-            <TableCell align='left'>Following</TableCell>
-            <TableCell align='left'>Location</TableCell>
-            <TableCell align='left'>Type</TableCell>
-            <TableCell align='left'>Bio</TableCell>
-            <TableCell align='left'>Avatar</TableCell>
+            <StyledTableCell align='left'>Username</StyledTableCell>
+            <StyledTableCell align='left'>Name</StyledTableCell>
+            <StyledTableCell align='left'>Public Repos</StyledTableCell>
+            <StyledTableCell align='left'>Followers</StyledTableCell>
+            <StyledTableCell align='left'>Following</StyledTableCell>
+            <StyledTableCell align='left'>Location</StyledTableCell>
+            <StyledTableCell align='left'>Type</StyledTableCell>
+            <StyledTableCell align='left'>Bio</StyledTableCell>
+            <StyledTableCell align='left'>Avatar</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

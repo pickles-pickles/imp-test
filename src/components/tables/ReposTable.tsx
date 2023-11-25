@@ -16,6 +16,7 @@ import {
 } from '../../state-management/slices/reposSlice'
 import { repoType } from '../../types/types'
 import { sortArray } from '../../helpers/sortArray'
+import { StyledTableCell, tableStyle } from '../../styles/styles'
 
 export default function ReposTable (props: any) {
   const error = useSelector(errorSelector),
@@ -25,13 +26,13 @@ export default function ReposTable (props: any) {
     repos = useSelector(reposSelector)
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+      <Table sx={tableStyle} aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell align='left'>Name</TableCell>
-            <TableCell align='left'>Description</TableCell>
-            <TableCell align='left'>Url</TableCell>
-            <TableCell align='left'>Stars</TableCell>
+            <StyledTableCell align='left'>Name</StyledTableCell>
+            <StyledTableCell align='left'>Description</StyledTableCell>
+            <StyledTableCell align='left'>Url</StyledTableCell>
+            <StyledTableCell align='left'>Stars</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -13,6 +13,7 @@ import {
   followersSelector,
   successSelector
 } from '../../state-management/slices/followersSlice'
+import { StyledTableCell, tableStyle } from '../../styles/styles'
 
 export default function FollowersTable (props: any) {
   const error = useSelector(errorSelector),
@@ -21,13 +22,13 @@ export default function FollowersTable (props: any) {
     followers = useSelector(followersSelector)
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+      <Table sx={tableStyle} aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell align='left'>Username</TableCell>
-            <TableCell align='left'>Url</TableCell>
-            <TableCell align='left'>Type</TableCell>
-            <TableCell align='left'>Avatar</TableCell>
+            <StyledTableCell align='left'>Username</StyledTableCell>
+            <StyledTableCell align='left'>Url</StyledTableCell>
+            <StyledTableCell align='left'>Type</StyledTableCell>
+            <StyledTableCell align='left'>Avatar</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
