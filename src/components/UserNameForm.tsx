@@ -10,7 +10,12 @@ import {
   fetchUserInfo
 } from '../state-management/slices/appSlice'
 import { fetchUserFollowers } from '../state-management/slices/followersSlice'
-import { fetchUserRepos } from '../state-management/slices/reposSlice'
+import {
+  fetchUserRepos,
+  isLoadingSelector as isLoadingReposSelector
+} from '../state-management/slices/reposSlice'
+import { isLoadingSelector as isLoadingFollowersSelector } from '../state-management/slices/followersSlice'
+import { isLoadingSelector as isLoadingUserSelector } from '../state-management/slices/appSlice'
 
 const StyledTextField = styled(TextField)(() => ({
   textDecoration: 'none',
@@ -59,6 +64,11 @@ const StyledButton = styled(Button)(() => ({
 export const UserNameForm = () => {
   const dispatch = useDispatch<AppDispatch>()
   const name = useSelector(nameSelector)
+  const isLoadingFollowers = useSelector(isLoadingFollowersSelector),
+    isLoadingUser = useSelector(isLoadingUserSelector),
+    isLoadingRepos = useSelector(isLoadingReposSelector)
+
+  const isLoading = isLoadingFollowers || isLoadingRepos || isLoadingUser
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       dispatch(setName(e.target.value))
@@ -93,7 +103,11 @@ export const UserNameForm = () => {
           }
         }}
       />
-      <StyledButton onClick={handleSubmit} disabled={!name} size='large'>
+      <StyledButton
+        onClick={handleSubmit}
+        disabled={!name || isLoading}
+        size='large'
+      >
         Submit
       </StyledButton>
     </Box>
