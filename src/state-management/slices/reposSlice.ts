@@ -6,6 +6,7 @@ import { repoType } from '../../types/types'
 // Define a type for the slice state
 interface reposState {
   repos: repoType[]
+  sortOrder: string
   isLoading: boolean
   error: any
   success: boolean
@@ -14,6 +15,7 @@ interface reposState {
 // Define the initial state using that type
 const initialState: reposState = {
   repos: [],
+  sortOrder: 'asc',
   isLoading: false,
   error: null,
   success: false
@@ -36,6 +38,10 @@ export const reposSlice = createSlice({
   reducers: {
     setRepos: (state, action: PayloadAction<Array<any>>) => {
       state.repos = action.payload
+    },
+
+    setSortOrder: (state, action: PayloadAction<string>) => {
+      state.sortOrder = action.payload
     }
   },
   extraReducers: builder => {
@@ -72,9 +78,10 @@ export const reposSlice = createSlice({
   }
 })
 
-export const { setRepos } = reposSlice.actions
+export const { setRepos, setSortOrder } = reposSlice.actions
 
 export const reposSelector = (state: RootState) => state.repos.repos
+export const sortOrderSelector = (state: RootState) => state.repos.sortOrder
 export const isLoadingSelector = (state: RootState) => state.repos.isLoading
 export const errorSelector = (state: RootState) => state.repos.error
 export const successSelector = (state: RootState) => state.repos.success

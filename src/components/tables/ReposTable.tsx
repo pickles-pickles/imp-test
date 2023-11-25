@@ -11,14 +11,17 @@ import {
   errorSelector,
   isLoadingSelector,
   reposSelector,
-  successSelector
+  successSelector,
+  sortOrderSelector
 } from '../../state-management/slices/reposSlice'
 import { repoType } from '../../types/types'
+import { sortArray } from '../../helpers/sortArray'
 
 export default function ReposTable (props: any) {
   const error = useSelector(errorSelector),
     success = useSelector(successSelector),
     isLoading = useSelector(isLoadingSelector),
+    sortOrder = useSelector(sortOrderSelector),
     repos = useSelector(reposSelector)
   return (
     <TableContainer component={Paper}>
@@ -40,18 +43,20 @@ export default function ReposTable (props: any) {
             </>
           )}
           {success &&
-            repos.map((repo: repoType) => (
-              <TableRow key={repo.id}>
-                <TableCell align='left'>{repo.name}</TableCell>
-                <TableCell align='left'>{repo.description}</TableCell>
-                <TableCell align='left'>
-                  <a href={repo.html_url} target='_blank' rel='noreferrer'>
-                    {repo.html_url}
-                  </a>
-                </TableCell>
-                <TableCell align='left'>{repo.stargazers_count}</TableCell>
-              </TableRow>
-            ))}
+            sortArray(repos, 'stargazers_count', sortOrder).map(
+              (repo: repoType) => (
+                <TableRow key={repo.id}>
+                  <TableCell align='left'>{repo.name}</TableCell>
+                  <TableCell align='left'>{repo.description}</TableCell>
+                  <TableCell align='left'>
+                    <a href={repo.html_url} target='_blank' rel='noreferrer'>
+                      {repo.html_url}
+                    </a>
+                  </TableCell>
+                  <TableCell align='left'>{repo.stargazers_count}</TableCell>
+                </TableRow>
+              )
+            )}
           {error && 'Something went wrong'}
         </TableBody>
       </Table>
