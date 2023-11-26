@@ -60,6 +60,14 @@ export default function FollowersTable (props: any) {
               </TableRow>
             ))}
           {error && <ErrorMessageTableRow colSpan={9} error={error} />}
+          {!followers.length && !error && (
+            <ErrorMessageTableRow
+              colSpan={9}
+              error={{
+                message: 'No followers here.'
+              }}
+            />
+          )}
         </TableBody>
       </Table>
     </TableContainer>

@@ -58,6 +58,14 @@ export default function ReposTable (props: any) {
               )
             )}
           {error && <ErrorMessageTableRow colSpan={9} error={error} />}
+          {!props.user && !error && (
+            <ErrorMessageTableRow
+              colSpan={9}
+              error={{
+                message: 'No repos here.'
+              }}
+            />
+          )}
         </TableBody>
       </Table>
     </TableContainer>

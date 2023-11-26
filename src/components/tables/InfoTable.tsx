@@ -62,6 +62,12 @@ export default function InfoTable (props: any) {
             </TableRow>
           )}
           {error && <ErrorMessageTableRow colSpan={9} error={error} />}
+          {!props.user.id && (
+            <ErrorMessageTableRow
+              colSpan={9}
+              error={{ message: 'Type a github user name' }}
+            />
+          )}
         </TableBody>
       </Table>
     </TableContainer>

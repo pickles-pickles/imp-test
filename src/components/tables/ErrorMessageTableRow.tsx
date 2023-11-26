@@ -8,7 +8,7 @@ export const ErrorMessageTableRow = (props: any) => {
       <TableCell colSpan={props.colSpan}>
         {' '}
         <h3 style={{ fontWeight: 'bold', textAlign: 'center' }}>
-          Something went wrong. {props.error.message}
+          {props.error.message}
         </h3>
       </TableCell>
     </TableRow>
