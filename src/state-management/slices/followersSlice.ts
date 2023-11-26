@@ -55,6 +55,7 @@ export const followersSlice = createSlice({
 
         state.isLoading = false
         state.success = true
+        state.error = false
       })
   }
 })

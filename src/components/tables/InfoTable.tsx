@@ -65,7 +65,7 @@ export default function InfoTable (props: any) {
           {!props.user.id && (
             <ErrorMessageTableRow
               colSpan={9}
-              error={{ message: 'Type a github user name' }}
+              error={{ message: 'Type a valid github user name' }}
             />
           )}
         </TableBody>

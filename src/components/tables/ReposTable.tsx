@@ -58,7 +58,7 @@ export default function ReposTable (props: any) {
               )
             )}
           {error && <ErrorMessageTableRow colSpan={9} error={error} />}
-          {!props.user && !error && (
+          {!repos.length && !error && (
             <ErrorMessageTableRow
               colSpan={9}
               error={{

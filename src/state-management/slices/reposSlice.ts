@@ -73,6 +73,7 @@ export const reposSlice = createSlice({
 
           state.isLoading = false
           state.success = true
+          state.error = false
         }
       )
   }

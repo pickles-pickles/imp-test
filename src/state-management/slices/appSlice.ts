@@ -52,6 +52,7 @@ export const appSlice = createSlice({
       .addCase(fetchUserInfo.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.error
+        state.user = {} //! to stop displaying the previous user avatar in appbar
       })
 
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
@@ -60,6 +61,7 @@ export const appSlice = createSlice({
 
         state.isLoading = false
         state.success = true
+        state.error = false
       })
   }
 })
