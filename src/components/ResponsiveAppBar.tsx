@@ -14,12 +14,25 @@ import MenuItem from '@mui/material/MenuItem'
 import { Link } from 'react-router-dom'
 import { userSelector } from '../state-management/slices/appSlice'
 import { useSelector } from 'react-redux'
+import styled from '@emotion/styled'
 
 const pages = [
   { title: 'Home', url: '' },
   { title: 'Repos', url: 'repos' },
   { title: 'Followers', url: 'followers' }
 ]
+
+const StyledLink = styled(Link)(() => ({
+  fontWeight: 'bold',
+  fontSize: '1.25rem',
+  color: '#f5f5f6',
+  textDecoration: 'none',
+  marginLeft: 10,
+  marginRight: 10,
+  '&:hover': {
+    textDecoration: 'underline'
+  }
+}))
 
 function ResponsiveAppBar () {
   const user = useSelector(userSelector)
@@ -127,7 +140,7 @@ function ResponsiveAppBar () {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={`/${page.url}`}>{page.title}</Link>
+                <StyledLink to={`/${page.url}`}>{page.title}</StyledLink>
               </Button>
             ))}
           </Box>
@@ -136,9 +149,7 @@ function ResponsiveAppBar () {
             <Tooltip title={user.login || 'no avatar'}>
               <Avatar
                 alt='user avatar'
-                src={`${
-                  user.login ? user.avatar_url : '/static/images/avatar/2.jpg'
-                }`}
+                src={`${user.login ? user.avatar_url : '#'}`}
               />
             </Tooltip>
           </Box>
