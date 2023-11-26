@@ -1,12 +1,65 @@
-# Getting Started with Create React App
+# DOCUMENTATION
+
+## 1. Contents
+
+---
+
+1. [Contents](#1-contents)
+2. [Link](#2-link)
+3. [Design patterns](#3-design-patterns)
+4. [Project decisions](#4-project-decisions)
+5. [Scripts](#5-scripts)
+
+## 2. Link
+
+---
+
+This app runs live on [https://konn-test.netlify.app/](https://konn-test.netlify.app/)
+
+## 3. Design Patterns
+
+---
+
+In the coding process, the following design patterns have been used:
+
+- Separation between Container and Presentational Components
+- Flux architecture for the state management
+- SOLID principles modified accordingly for functions
+- Separation of concerns in every level (module function etc)
+
+Proper error handling was performed. Fallback route was included to handle invalid URLs. Proper messages are shown on the UI, in case of rejected API call, and, in case of fulfilled API call, if there are empty response.
+
+## 4. Project decisions
+
+---
+
+The project is standing in two pillars:
+
+1. UI
+2. Logic
+
+### 1. UI
+
+The app consumes the github api. To establish a pattern here, I chose to use the [github](https://github.com/) home page color pallette and a relevant image
+
+### 2. Logic
+
+The app follows the design patterns specified in [Design patterns](#3-design-patterns).
+Furthermore, I use proper established libraries for state management, API callsand CSS, that allow scalability of the app and readability of the code.
+
+## 5. Scripts
+
+---
+
+#### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +67,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +82,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -39,7 +92,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
