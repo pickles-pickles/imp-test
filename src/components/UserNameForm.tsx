@@ -86,7 +86,8 @@ export const UserNameForm = () => {
       sx={{
         '& > :not(style)': { m: 1, width: '25ch' },
         display: 'flex',
-        alignItems: 'baseline'
+        alignItems: 'baseline',
+        flexDirection: { xs: 'column', lg: 'row' }
       }}
       noValidate
       autoComplete='off'
