@@ -40,7 +40,8 @@ The project is standing in two pillars:
 
 ### 1. UI
 
-The app consumes the github api. To establish a pattern here, I chose to use the [github](https://github.com/) home page color pallette and a relevant image
+The app consumes the github api. To establish a pattern here, I chose to use the [github](https://github.com/) home page color pallette and a relevant image.
+When the user clicks on a follower or repo link, it links to the proper github page.
 
 ### 2. Logic
 
