@@ -24,7 +24,6 @@ export const fetchUserFollowers = createAsyncThunk(
   async (name: string) => {
     const response = await getUserFollowers(name)
     const data = response.data
-    console.log(data)
     return data
   }
 )
@@ -50,7 +49,6 @@ export const followersSlice = createSlice({
       })
 
       .addCase(fetchUserFollowers.fulfilled, (state, action) => {
-        console.log('action payload is', action.payload)
         state.followers = action.payload
 
         state.isLoading = false

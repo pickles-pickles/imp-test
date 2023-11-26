@@ -72,7 +72,6 @@ export const UserNameForm = () => {
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       dispatch(setName(e.target.value))
-      console.log(name)
     },
     handleSubmit = (e: any) => {
       e.preventDefault()

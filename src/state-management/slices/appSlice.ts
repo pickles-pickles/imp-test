@@ -26,7 +26,6 @@ export const fetchUserInfo = createAsyncThunk(
   async (name: string) => {
     const response = await getUser(name)
     const data = response.data
-    console.log(data)
     return data
   }
 )
@@ -56,7 +55,6 @@ export const appSlice = createSlice({
       })
 
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
-        console.log('action payload is', action.payload)
         state.user = action.payload
 
         state.isLoading = false

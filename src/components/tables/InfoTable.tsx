@@ -61,8 +61,12 @@ export default function InfoTable (props: any) {
               </TableCell>
             </TableRow>
           )}
+          {/* 
+      // * handle req rejection. The logic is the same on the other tables */}
           {error && <ErrorMessageTableRow colSpan={9} error={error} />}
-          {!props.user.id && (
+          {/* 
+      // *  UI on initial page load or handle empty res. The logic is the same on the other tables */}
+          {!props.user.id && !error && (
             <ErrorMessageTableRow
               colSpan={9}
               error={{ message: 'Type a valid github user name' }}

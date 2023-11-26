@@ -26,7 +26,7 @@ export const fetchUserRepos = createAsyncThunk(
   async (name: string) => {
     const response = await getUserRepos(name)
     const data = response.data
-    console.log(data)
+
     return data
   }
 )
@@ -58,7 +58,6 @@ export const reposSlice = createSlice({
       .addCase(
         fetchUserRepos.fulfilled,
         (state, action: PayloadAction<Array<any>>) => {
-          console.log('action payload is', action.payload)
           state.repos = action.payload
             .filter(repo => !repo.private)
             .map(publicRepo => ({

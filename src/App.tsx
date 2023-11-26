@@ -10,10 +10,11 @@ import { Header } from './components/Header'
 function App () {
   const location = useLocation()
 
-  console.log(location)
   return (
     <div className='App'>
       <ResponsiveAppBar />
+      {/* 
+      // * show header only if the url is valid */}
       {location && location.pathname !== '/404' && <Header />}
 
       <Routes>
