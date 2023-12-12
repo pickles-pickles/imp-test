@@ -24,6 +24,7 @@ const initialState: AppState = {
 export const fetchUsers = createAsyncThunk('app/fetchUsers', async () => {
   const response = await getUsers()
   const data = response.data
+  console.log(data)
   return data
 })
 
