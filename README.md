@@ -14,7 +14,7 @@
 
 ---
 
-This app runs live on [https://konn-test.netlify.app/](https://konn-test.netlify.app/)
+This app runs live on
 
 ## 3. Design Patterns
 
@@ -32,21 +32,6 @@ Proper error handling was performed. Fallback route was included to handle inval
 ## 4. Project decisions
 
 ---
-
-The project is standing in two pillars:
-
-1. UI
-2. Logic
-
-### 1. UI
-
-The app consumes the github api. To establish a pattern here, I chose to use the [github](https://github.com/) home page color pallette and a relevant image.
-When the user clicks on a follower or repo link, it links to the proper github page.
-
-### 2. Logic
-
-The app follows the design patterns specified in [Design patterns](#3-design-patterns).
-Furthermore, I use proper established libraries for state management, API callsand CSS, that allow scalability of the app and readability of the code.
 
 ## 5. Scripts
 

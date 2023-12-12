@@ -1,65 +1,29 @@
-export interface userType {
-  login?: string
+export interface UserType {
   id?: number
-  node_id?: string
-  avatar_url?: string
-  gravatar_id?: string
-  url?: string
-  html_url?: string
-  followers_url?: string
-  following_url?: string
-  gists_url?: string
-  starred_url?: string
-  subscriptions_url?: string
-  organizations_url?: string
-  repos_url?: string
-  events_url?: string
-  received_events_url?: string
-  type?: string
-  site_admin?: boolean
   name?: string
-  company?: string
-  blog?: string
-  location?: any
+  username?: string
   email?: string
-  hireable?: boolean
-  bio?: string
-  twitter_username?: string
-  public_repos?: number
-  public_gists?: number
-  followers?: number
-  following?: number
-  created_at?: string
-  updated_at?: string
+  address?: AddressType
+  phone?: string
+  website?: string
+  company?: CompanyType
 }
 
-export interface repoType {
-  id?: number
-  node_id?: string
+export interface AddressType {
+  street?: string
+  suite?: string
+  city?: string
+  zipcode?: string
+  geo?: GeoType
+}
+
+export interface GeoType {
+  lat?: string | number
+  lng?: string | number
+}
+
+export interface CompanyType {
   name?: string
-  url?: string
-  html_url?: string
-  description: string
-  stargazers_count: number
-}
-
-export interface followerType {
-  login?: string
-  id?: number
-  node_id?: string
-  avatar_url?: string
-  gravatar_id?: string
-  url?: string
-  html_url?: string
-  followers_url?: string
-  following_url?: string
-  gists_url?: string
-  starred_url?: string
-  subscriptions_url?: string
-  organizations_url?: string
-  repos_url?: string
-  events_url?: string
-  received_events_url?: string
-  type?: string
-  site_admin?: boolean
+  catchPhrase?: string
+  bs?: string
 }
