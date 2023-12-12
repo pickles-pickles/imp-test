@@ -1,9 +1,23 @@
 .App {
 }
 
+.color-lane {
+  background: #00a4e4;
+  min-height: 30px;
+}
+
+.header-content {
+  height: 10vh;
+  border-bottom: 6px solid #e5e5e5;
+}
+
+.logo {
+  height: 53%;
+  margin-right: 1.5vw;
+}
+
 .title {
-  margin-bottom: 2rem;
-  text-align: center;
+  color: #b6c5de;
 }
 
 .page-404-container {
