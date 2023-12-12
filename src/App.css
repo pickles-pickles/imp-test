@@ -20,6 +20,41 @@
   color: #b6c5de;
 }
 
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.accordion-button.collapsed {
+  background-color: #e9ecef;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: '-';
+  color: black;
+  background-image: none;
+}
+
+.accordion-button.collapsed::after {
+  content: '+';
+  color: black;
+  font-weight: 400;
+
+  background-image: none;
+}
+
+.my-card-text {
+  color: #90acc8;
+  margin-bottom: 5px;
+}
+
+.card-link {
+  color: #00a4e4;
+}
+
 .page-404-container {
   /* background-image: url('/public/<name>.<type>'); */
   height: 100%;

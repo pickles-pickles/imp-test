@@ -9,7 +9,7 @@ export const MainPage = () => {
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     dispatch(fetchUsers())
-  }, [])
+  }, [dispatch])
   return (
     <React.Fragment>
       <Grid container>
