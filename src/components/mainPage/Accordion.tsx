@@ -17,7 +17,7 @@ export const Accordion = () => {
       {users.map(user => (
         <div className='accordion-item mb-2 ' key={user.id}>
           <h2
-            className='accordion-header bg-warning'
+            className='accordion-header'
             id={`heading${user.id}`}
             onClick={() => toggleAccordion(user.id)}
           >
@@ -36,7 +36,7 @@ export const Accordion = () => {
           </h2>
           <div
             id='collapseOne'
-            className={`accordion-collapse collapse bg-info ${
+            className={`accordion-collapse collapse ${
               activeAccordion === user.id ? 'show' : ''
             }`}
             aria-labelledby={`heading${user.id}`}
