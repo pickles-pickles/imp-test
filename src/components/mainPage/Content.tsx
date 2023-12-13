@@ -19,7 +19,7 @@ export const Content = () => {
         <div className='col-12 col-md-8 '>
           <SearchBar />
         </div>
-        <div className='col-12 col-md-4 text-end'>
+        <div className='col-12 col-md-4 text-start text-md-end  mt-3 mt-md-0'>
           {' '}
           {success &&
             !error &&
