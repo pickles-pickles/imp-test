@@ -50,7 +50,7 @@ export const Accordion = () => {
       {/* 
   // ! handle http over https site error for demonstration purposes
   */}
-      {error.message === 'Network Error' && (
+      {error && error.message === 'Network Error' && (
         <div className='accordion' id='userAccordion'>
           {/* 
       //* map from dummy data
