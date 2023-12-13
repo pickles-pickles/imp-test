@@ -39,7 +39,7 @@ export const AccordionCard = ({ user }: ComponentPropsType) => {
         data-bs-parent='#userAccordion'
       >
         <div className='accordion-body '>
-          <div className='accordion-body-content d-flex flex-row p-3 mb-2'>
+          <div className='accordion-body-content d-flex flex-row flex-wrap flex-md-nowrap p-3 mb-2'>
             <img
               src='/img/user.jpg'
               width='90rem'
@@ -47,7 +47,7 @@ export const AccordionCard = ({ user }: ComponentPropsType) => {
               style={{ borderRadius: '50%', marginRight: '20px' }}
               alt=''
             />
-            <div className='card-text-container flex-fill pt-2 '>
+            <div className='card-text-container flex-md-fill pt-2 '>
               <a href={`mailto:${user.email}`} className='card-link'>
                 {user.email}
               </a>
@@ -70,7 +70,7 @@ export const AccordionCard = ({ user }: ComponentPropsType) => {
                   : 'city unknown'}
               </p>
             </div>
-            <div className='text-end flex-fill align-self-end '>
+            <div className='text-md-end flex-md-fill align-self-end align-self-md-end '>
               {user.address?.geo && (
                 <a
                   href={`https://vermillion-weather.netlify.app/?lat=${user.address?.geo.lat}&lon=${user.address?.geo.lng}`}
