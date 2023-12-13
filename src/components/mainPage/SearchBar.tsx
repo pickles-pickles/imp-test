@@ -13,7 +13,6 @@ export const SearchBar = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setUserName(e.target.value))
-    console.log(userName)
   }
   return (
     <div>

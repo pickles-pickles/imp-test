@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
 
 const StyledLink = styled(Link)(() => ({
-  color: 'white',
+  color: 'black',
   textDecoration: 'none',
   fontSize: '2rem',
   '&:hover': {
-    color: 'white',
-    textDecoration: 'underline white'
+    color: 'black',
+    textDecoration: 'underline black'
   }
 }))
 

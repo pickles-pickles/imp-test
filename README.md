@@ -10,11 +10,13 @@
 4. [Project decisions](#4-project-decisions)
 5. [Scripts](#5-scripts)
 
-## 2. Link
+## 2. Links
 
 ---
 
-This app runs live on
+This app runs live on [Netlify](https://improv-test.netlify.app/)
+
+The code can be found on [Github](https://github.com/pickles-pickles/imp-test)
 
 ## 3. Design Patterns
 
@@ -25,13 +27,24 @@ In the coding process, the following design patterns have been used:
 - Separation between Container and Presentational Components
 - Flux architecture for the state management
 - SOLID principles modified accordingly for functions
-- Separation of concerns in every level (module function etc)
+- Separation of concerns in every level (module, function etc)
 
 Proper error handling was performed. Fallback route was included to handle invalid URLs. Proper messages are shown on the UI, in case of rejected API call, and, in case of fulfilled API call, if there are empty response.
 
 ## 4. Project decisions
 
 ---
+
+The following decisions were made:
+
+1. To use Bootstrap 5 as the selected CSS library - because this is the preferred CSS library in ImprovIT
+2. React was used, as I am more familiar with it and allows my to demonstrate my expertise with JS frameworks/libraries
+3. Create-react-app was used, as it is an easy and fast way to bootstrap a React project. Boilerplate code was modified to properly fit the project.
+4. A loader and an error message were included to handle unexpected API situations
+5. Input text was sanitized to be case insensitive and trimmed by writing a proper helper
+6. As a bonus feature, you can see the weather in the location of the selected user. In each accordion card trhere is a link that leads to
+   a weather app of mine
+7. You can view the app online on Netlify. Because of the unsafe nature of the API (http, instead https) I included a file with dummy data that is rendered in case the browser complains about the http over htttps address. This is purely for demo purposes.
 
 ## 5. Scripts
 
