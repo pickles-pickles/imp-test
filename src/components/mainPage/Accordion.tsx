@@ -11,6 +11,7 @@ import { compareSanitizedStrings } from '../../helpers/appHelpers'
 import { Spinner } from '../Spinner'
 import { ErrorMessage } from '../ErrorMessage'
 import { AccordionCard } from './AccordionCard'
+import { mockData } from '../../mockData/mockData'
 
 export const Accordion = () => {
   const users = useSelector(usersSelector)
@@ -44,6 +45,21 @@ export const Accordion = () => {
       {error && (
         <div className='text-center'>
           <ErrorMessage error={error} />
+        </div>
+      )}
+      {/* 
+  // ! handle http over https site error for demonstration purposes
+  */}
+      {error.message === 'Network Error' && (
+        <div className='accordion' id='userAccordion'>
+          {/* 
+      //* map from dummy data
+      */}
+          {mockData.data
+            .filter(user => compareSanitizedStrings(user.name || '', userName))
+            .map(user => (
+              <AccordionCard user={user} />
+            ))}
         </div>
       )}
     </React.Fragment>
