@@ -1,23 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from '@emotion/styled'
 
-const StyledLink = styled(Link)(() => ({
+const styledLink = {
   color: 'black',
   textDecoration: 'none',
-  fontSize: '2rem',
-  '&:hover': {
-    color: 'black',
-    textDecoration: 'underline black'
-  }
-}))
+  fontSize: '2rem'
+}
 
 export const NotFoundPage = () => {
   return (
     <React.Fragment>
       <div className='page-404-container'>
         <h1>Page Not Found</h1>
-        <StyledLink to='/'>Go to Home Page</StyledLink>
+        <Link to='/' style={styledLink}>
+          Go to Home Page
+        </Link>
       </div>
     </React.Fragment>
   )

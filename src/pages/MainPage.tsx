@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material'
 import React, { useEffect } from 'react'
 import { Content } from '../components/mainPage/Content'
 import { useDispatch } from 'react-redux'
@@ -10,13 +9,12 @@ export const MainPage = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch])
+
   return (
     <React.Fragment>
-      <Grid container>
-        <Grid item xs={12} sx={{ minHeight: 50 }}>
-          <Content />
-        </Grid>
-      </Grid>
+      <div className='container'>
+        <Content />
+      </div>
     </React.Fragment>
   )
 }

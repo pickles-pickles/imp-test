@@ -51,16 +51,25 @@ export const Accordion = () => {
   // ! handle http over https site error for demonstration purposes
   */}
       {error && error.message === 'Network Error' && (
-        <div className='accordion' id='userAccordion'>
-          {/* 
+        <>
+          <div className='text-center'>
+            <ErrorMessage
+              error={{ message: 'Display of dummy data for demo purposes' }}
+            />
+          </div>
+          <div className='accordion' id='userAccordion'>
+            {/* 
       //* map from dummy data
       */}
-          {mockData.data
-            .filter(user => compareSanitizedStrings(user.name || '', userName))
-            .map(user => (
-              <AccordionCard user={user} />
-            ))}
-        </div>
+            {mockData.data
+              .filter(user =>
+                compareSanitizedStrings(user.name || '', userName)
+              )
+              .map(user => (
+                <AccordionCard user={user} />
+              ))}
+          </div>
+        </>
       )}
     </React.Fragment>
   )
