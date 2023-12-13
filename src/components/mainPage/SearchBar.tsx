@@ -17,7 +17,7 @@ export const SearchBar = () => {
   }
   return (
     <div>
-      <div className='input-group mb-3'>
+      <div className='input-group '>
         <input
           type='search'
           className='form-control'
